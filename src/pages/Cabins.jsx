@@ -1,19 +1,30 @@
-import { useEffect } from "react";
-import Heading from "../ui/Heading";
-import Row from "../ui/Row";
-import { getCabins } from "../services/apiCabins";
+import Heading from '../ui/Heading'
+import Row from '../ui/Row'
+import Button from '../ui/Button'
+import CabinTable from '../features/cabins/CabinTable'
+import CreateCabinForm from '../features/cabins/CreateCabinForm'
+import { useState } from 'react'
 
 function Cabins() {
-  useEffect(function(){
-    getCabins().then((data) => {console.log(data)})
-  })
+  const [showForm, setShowForm] = useState(false)
+
   return (
-    <Row type="horizontal">
-      <Heading as="h1">All cabins</Heading>
-      <p>TEST</p>
-      <img src="https://xjnuluzxzgueyaaqtisg.supabase.co/storage/v1/object/public/cabin-images/cabin-006.jpg" alt="" />
-    </Row>
-  );
+    <>
+      <Row type='horizontal'>
+        <Heading as='h1'>All cabins</Heading>
+        <p>Filster / Sort</p>
+      </Row>
+      <Row>
+        <CabinTable />
+        <Button
+          onClick={() => setShowForm((show) => !show)}
+        >
+          Add new cabine
+        </Button>
+        {showForm && <CreateCabinForm/>}
+      </Row>
+    </>
+  )
 }
 
-export default Cabins;
+export default Cabins

@@ -27,14 +27,18 @@ function CreateCabinForm() {
   const { mutate, isLoading: isCreating } = useMutation({
     mutationFn: createCabin,
     onSuccess: () => {
-      toast.success('New Cabien succsessfully credated')
+      toast.success('New Cabien succsessfully credated', {
+        duration: 2000,
+      })
       queryClient.invalidateQueries({
         queryKey: ['cabins'],
       })
       reset()
     },
     onError: (error) => {
-      toast.error(error.message)
+      toast.error(error.message, {
+        duration: 2000,
+      })
       console.log(error.message)
     },
   })

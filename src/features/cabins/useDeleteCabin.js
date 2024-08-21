@@ -12,13 +12,17 @@ export function useDeleteCabin() {
     useMutation({
       mutationFn: deleteCabinApi,
       onSuccess: () => {
-        toast.success('Cabin successfully deleted')
+        toast.success('Cabin successfully deleted', {
+          duration: 2000,
+        })
         queryClient.invalidateQueries({
           queryKey: ['cabins'],
         })
       },
       onError: (err) => {
-        toast.error(err.message)
+        toast.error(err.message, {
+          duration: 2000,
+        })
       },
     })
 

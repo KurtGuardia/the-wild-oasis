@@ -12,13 +12,17 @@ export function useCreateCabin() {
     useMutation({
       mutationFn: createEditCabin,
       onSuccess: () => {
-        toast.success('New Cabin succsessfully created')
+        toast.success('New Cabin succsessfully created', {
+          duration: 2000,
+        })
         queryClient.invalidateQueries({
           queryKey: ['cabins'],
         })
       },
       onError: (error) => {
-        toast.error(error.message)
+        toast.error(error.message, {
+          duration: 2000,
+        })
         console.log(error.message)
       },
     })

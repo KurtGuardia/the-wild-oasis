@@ -10,7 +10,6 @@ export function useOutsideClick(handler, listenCapturing=true){
             ref.current &&
             !ref.current.contains(e.target)
           ) {
-            console.log('clik')
             handler()
           }
         }

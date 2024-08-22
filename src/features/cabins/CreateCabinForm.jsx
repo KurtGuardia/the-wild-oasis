@@ -122,7 +122,7 @@ function CreateCabinForm({
             validate: (value) =>
               Number(value) <=
                 Number(getValues().regularPrice) ||
-              'Discoutn should be aless than regular price',
+              'Discount should be aless than regular price',
           })}
         />
       </FormRow>

@@ -63,7 +63,6 @@ const CabinRow = ({ cabin }) => {
     description,
     image,
   } = cabin
-    console.log("🚀 ~ CabinRow ~ image:", image)
 
   function handleDuplicate() {
     createCabin({

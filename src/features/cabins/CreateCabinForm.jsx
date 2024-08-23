@@ -118,6 +118,7 @@ function CreateCabinForm({
           type='number'
           id='discount'
           disabled={isWorking}
+          defaultValue={0}
           {...register('discount', {
             validate: (value) =>
               Number(value) <=

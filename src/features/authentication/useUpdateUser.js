@@ -15,7 +15,7 @@ export function useUpdateUser() {
         toast.success('User account successfully updated', {
           duration: 3000,
         })
-        // queryClient.setQueriesData('user', user)
+        queryClient.setQueriesData(['user'], user)
         queryClient.invalidateQueries({
           queryKey: ['user'],
         })

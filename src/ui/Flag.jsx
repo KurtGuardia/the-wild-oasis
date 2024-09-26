@@ -7,7 +7,7 @@ const StyledFlag = styled.img`
   border: 1px solid var(--color-grey-100);
 `;
 
-export  default function Flag({src, alt}) {
+export function Flag({src, alt}) {
   return (
     <StyledFlag src={src} alt={alt}/>
   )

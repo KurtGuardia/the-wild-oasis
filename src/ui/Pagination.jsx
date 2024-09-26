@@ -111,14 +111,14 @@ export default function Pagination({ count }) {
           onClick={prevPage}
           disabled={currentPage === 1}
         >
-          <HiChevronLeft /> <span>Previous</span>
+          <HiChevronLeft /> <P>Previous</P>
         </PaginationButton>
 
         <PaginationButton
           onClick={nextPage}
           disabled={currentPage === pageCount}
         >
-          <span>Next</span>
+          <P>Next</P>
           <HiChevronRight />
         </PaginationButton>
       </Buttons>

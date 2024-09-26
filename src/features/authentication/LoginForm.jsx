@@ -7,8 +7,8 @@ import FormRowVertical from '../../ui/FormRowVertical'
 import SpinnerMini from '../../ui/SpinnerMini'
 
 function LoginForm() {
-  const [email, setEmail] = useState('test@test.com')
-  const [password, setPassword] = useState('123test')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const { login, isLoading } = useLogin()
 
   function handleSubmit(e) {
@@ -37,6 +37,7 @@ function LoginForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={isLoading}
+          placeholder='for demo use: test@test.com'
         />
       </FormRowVertical>
       <FormRowVertical label='Password'>
@@ -47,6 +48,7 @@ function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           disabled={isLoading}
+          placeholder='for demo use: 123456test'
         />
       </FormRowVertical>
       <FormRowVertical>
